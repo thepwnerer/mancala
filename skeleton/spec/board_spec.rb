@@ -74,6 +74,7 @@ describe Board do
       # not a starting move; assumed to be an automatic move after finishing a play on this cup full of stones
       board.make_move(12, "Erica")
       expect(board.cups[13]).to be_empty
+      #was there an error here? shit? I changed from six to five
       expect(board.cups[3]).to eq( six_stone_cup )
     end
 

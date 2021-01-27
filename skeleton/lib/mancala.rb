@@ -2,6 +2,7 @@ require_relative 'board'
 require_relative 'player'
 
 class Mancala
+#  attr_reader :player1, :player2
   def initialize(name1, name2)
     @player1 = Player.new(name1, 1)
     @player2 = Player.new(name2, 2)
@@ -62,3 +63,7 @@ class Mancala
     puts " 1   2   3   4   5   6"
   end
 end
+
+test = Mancala.new("ding","dong")
+
+test.play
