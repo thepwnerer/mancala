@@ -1,5 +1,3 @@
-require 'pry'
-
 class Board
   attr_accessor :cups
   attr_reader :name1, :name2
@@ -54,12 +52,12 @@ class Board
 
   def next_turn(ending_cup_idx, current_player_name)
     # helper method to determine whether #make_move returns :switch, :prompt, or ending_cup_idx
-    if self.cups[ending_cup_idx].length == 1
+    if self.name1 == current_player_name && ending_cup_idx == 6 || self.name2 == current_player_name && ending_cup_idx == 13
+      return :prompt
+    elsif self.cups[ending_cup_idx].length == 1
       return :switch
     elsif self.cups[ending_cup_idx].length > 1
       return ending_cup_idx
-    elsif self.name1 == current_player_name && ending_cup_idx == 6 || self.name2 == current_player_name && ending_cup_idx == 13
-      return :prompt
     end
   end
 
@@ -89,3 +87,5 @@ class Board
       :draw
   end
 end
+
+
